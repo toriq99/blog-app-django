@@ -12,3 +12,6 @@ def posts(request):
 
 def posts_details(request):
     return HttpResponse("spesific post url success")
+
+def home(request):
+    return render(request, 'blog/homepage-1.html')

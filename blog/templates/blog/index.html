@@ -1,7 +1,37 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Welcome{% endblock title %}
 
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock css_files %}
+
 {% block content %}
-    <h1>Welcome to my Blog</h1>
+
+
+<section id="welcome">
+    <header>
+        <img src="{% static 'blog/images/ariq.jpg' %}" alt="Ariq">
+        <h2>ARIQ'S BLOG</h2>
+    </header>
+    <p>Hi, I am Thariq but you can call me Ariq, now I'm still learning django :D</p>
+</section>
+
+<section id="latest-posts">
+    <h2>My Latest Thoughts</h2>
+    <ul>
+        {% include 'blog/include/posts.html' %}
+    </ul>
+</section>
+
+<section id="about">
+    <h2>What I do</h2>
+    <p>Now I learn how to use django, i have known python before but it use for data analytics
+        not for web programming
+    </p>
+    <p>
+        My goal is to keep growing as a python programmer....
+    </p>
+</section>
 {% endblock content %}
