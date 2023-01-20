@@ -4,6 +4,7 @@
 {% block title %}Welcome{% endblock title %}
 
 {% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/posts.css' %}">
     <link rel="stylesheet" href="{% static 'blog/index.css' %}">
 {% endblock css_files %}
 
@@ -21,7 +22,9 @@
 <section id="latest-posts">
     <h2>My Latest Thoughts</h2>
     <ul>
-        {% include 'blog/include/posts.html' %}
+        {% for items in post %}
+            {% include 'blog/include/posts.html' %}
+        {% endfor %}
     </ul>
 </section>
 

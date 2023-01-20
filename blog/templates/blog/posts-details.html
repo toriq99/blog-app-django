@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}This Blog Page{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/posts-detail.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+    <section id="summary">
+        <h2>Post Title</h2>
+        <article>
+            <img src="{% static 'blog/images/mountains.jpg' %}" alt="Post Title">
+            <address>by Ariq</address>
+            <div>
+                Last Update on <time>January 10th</time>
+            </div>
+        </article>
+    </section>
+
+    <main>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam laborum officia blanditiis quaerat? Laboriosam molestias illum sed omnis ipsam, suscipit officiis architecto beatae laudantium explicabo a natus dignissimos consectetur magni?
+        </p>
+    </main>
+{% endblock content %}
