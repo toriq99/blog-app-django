@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}This Blog Page{% endblock title %}
+{% block title %}{{ post.title }}{% endblock title %}
 
 {% block css_files %}
     <link rel="stylesheet" href="{% static 'blog/posts-detail.css' %}">
@@ -10,19 +10,19 @@
 
 {% block content %}
     <section id="summary">
-        <h2>Post Title</h2>
+        <h2>{{ post.title }}</h2>
         <article>
-            <img src="{% static 'blog/images/mountains.jpg' %}" alt="Post Title">
-            <address>by Ariq</address>
+            <img src="{% static 'blog/images/'|add:post.image %}" alt="{{ post.title }}">
+            <address>by {{ post.author }}</address>
             <div>
-                Last Update on <time>January 10th</time>
+                Last Update on <time>{{ post.date|date:"F j, Y"}}</time>
             </div>
         </article>
     </section>
 
     <main>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam laborum officia blanditiis quaerat? Laboriosam molestias illum sed omnis ipsam, suscipit officiis architecto beatae laudantium explicabo a natus dignissimos consectetur magni?
+            {{ post.content }}
         </p>
     </main>
 {% endblock content %}
